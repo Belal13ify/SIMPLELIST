@@ -49,12 +49,16 @@ void List::add_item(){
 void List::delete_item(){
     cout << "\n\n";
     cout << "***** Delete Item *****\n";
-    cout << " Select an item to delete\n";
+    cout << " Select an item to delete: \n";
 
     if(list.size()){
         for (unsigned i=0;i<list.size(); i++){
             cout << i << ": " << list [i] << "\n";
         }
+        int choiceNum;
+        cin >> choiceNum;
+        list.erase(list.begin() + choiceNum);
+        cout << "Item deleted from the list\n";
     }
     else { 
         cout << " No items to delete\n";
@@ -64,12 +68,12 @@ void List::delete_item(){
 
 void List::print_list(){
     cout << "\n\n\n\n";
-    cout << "***** Printing List *****\n";
+    cout << "***** Printing List ***** \n";
 
     for (unsigned i=0; i<list.size(); i++){
         cout << i << " - "<< list[i] << "\n";
     }
-    cout << " M - Menu \n";
+    cout << "\nM - Menu \n";
     char choice;
     cin >> choice;
 
